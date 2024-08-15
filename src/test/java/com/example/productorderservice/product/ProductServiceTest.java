@@ -20,8 +20,7 @@ public class ProductServiceTest {
         final String name = "상품명";
         final int price = 1000;
         final DiscountPolicy disCountPolicy = DiscountPolicy.NONE;  //3
-        final AddProductRequest request = new AddProductRequest(name, price, disCountPolicy);   //2
-        return request;
+        return new AddProductRequest(name, price, disCountPolicy);
     }
 
 }
