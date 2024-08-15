@@ -34,6 +34,9 @@ dependencies {
 
 	//rest-assured 추가
 	testImplementation 'io.rest-assured:rest-assured'
+
+	//테스트 격리를 위한 guava 추가
+	implementation 'com.google.guava:guava:33.2.1-jre'
 }
 
 tasks.named('test') {
