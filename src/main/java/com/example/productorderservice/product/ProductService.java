@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 @Component
-class ProductService {
+public class ProductService {
     private final ProductPort productPort;
 
     ProductService(ProductPort productPort) {
