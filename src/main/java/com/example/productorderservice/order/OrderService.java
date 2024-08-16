@@ -12,8 +12,8 @@ public class OrderService {
     }
 
     public void createOrder(CreateOrderRequest request) {
-        Product product = orderPort.getProductById(request.productId());
-        Order order = new Order(product, request.quantity());
+        Product product = orderPort.getProductById(request.getProductId());
+        Order order = new Order(product, request.getQuantity());
         orderPort.save(order);
     }
 }

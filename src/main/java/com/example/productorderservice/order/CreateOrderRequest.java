@@ -1,10 +1,11 @@
 package com.example.productorderservice.order;
 
+import lombok.Getter;
 import org.springframework.util.Assert;
 
-import java.util.Objects;
 
-final class CreateOrderRequest {
+@Getter
+public class CreateOrderRequest {
     private final Long productId;
     private final int quantity;
 
@@ -14,34 +15,4 @@ final class CreateOrderRequest {
         this.productId = productId;
         this.quantity = quantity;
     }
-
-    public Long productId() {
-        return productId;
-    }
-
-    public int quantity() {
-        return quantity;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == this) return true;
-        if (obj == null || obj.getClass() != this.getClass()) return false;
-        var that = (CreateOrderRequest) obj;
-        return Objects.equals(this.productId, that.productId) &&
-                this.quantity == that.quantity;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(productId, quantity);
-    }
-
-    @Override
-    public String toString() {
-        return "CreateOrderRequest[" +
-                "productId=" + productId + ", " +
-                "quantity=" + quantity + ']';
-    }
-
 }
