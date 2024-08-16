@@ -28,4 +28,10 @@ class ProductService {
                 product.getDiscountPolicy());
     }
 
+    public void updateProduct(Long productId, UpdateProductRequest request) {
+        Product product = productPort.getProduct(productId);
+        product.update(request.name(),request.price(),request.discountPolicy());
+
+        productPort.save(product);
+    }
 }

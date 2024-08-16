@@ -22,4 +22,12 @@ public class ProductSteps {
         final DiscountPolicy disCountPolicy = DiscountPolicy.NONE;  //3
         return new AddProductRequest(name, price, disCountPolicy);
     }
+
+    public static ExtractableResponse<Response> 상품조회요청(Long productId) {
+        return RestAssured.given().log().all()
+                .when()
+                .get("/products/{productId}", productId)
+                .then().log().all()
+                .extract();
+    }
 }
