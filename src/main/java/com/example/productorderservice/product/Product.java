@@ -9,8 +9,8 @@ import org.springframework.util.Assert;
 @Entity
 @Table(name = "products")
 @Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-class Product {
+@NoArgsConstructor
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
