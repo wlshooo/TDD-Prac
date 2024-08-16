@@ -1,6 +1,6 @@
-package com.example.productorderservice.order;
+package com.example.productorderservice.order.domain;
 
-import com.example.productorderservice.product.Product;
+import com.example.productorderservice.product.domain.Product;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -24,5 +24,9 @@ public class Order {
         Assert.isTrue(quantity > 0, "수량은 0보다 커야 합니다.");
         this.product = product;
         this.quantity = quantity;
+    }
+
+    public int getTotalPrice() {
+        return product.getDiscountedPrice() * quantity;
     }
 }

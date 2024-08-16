@@ -1,4 +1,4 @@
-package com.example.productorderservice.order;
+package com.example.productorderservice.order.application.service;
 
 import lombok.Getter;
 import org.springframework.util.Assert;

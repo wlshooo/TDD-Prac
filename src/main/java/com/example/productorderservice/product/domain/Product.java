@@ -1,7 +1,7 @@
-package com.example.productorderservice.product;
+package com.example.productorderservice.product.domain;
 
+import com.example.productorderservice.product.domain.DiscountPolicy;
 import jakarta.persistence.*;
-import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.util.Assert;
@@ -34,5 +34,9 @@ public class Product {
         this.name = name;
         this.price = price;
         this.discountPolicy = discountPolicy;
+    }
+
+    public int getDiscountedPrice() {
+        return discountPolicy.applyDiscount(price);
     }
 }

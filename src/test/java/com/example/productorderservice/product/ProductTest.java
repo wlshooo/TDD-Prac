@@ -1,5 +1,7 @@
 package com.example.productorderservice.product;
 
+import com.example.productorderservice.product.domain.DiscountPolicy;
+import com.example.productorderservice.product.domain.Product;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -9,7 +11,7 @@ class ProductTest {
     //도메인 로직은 항상 테스트 해야한다.
     @Test
     void update() {
-        final Product product = new Product("상품명",1000,DiscountPolicy.NONE);
+        final Product product = new Product("상품명",1000, DiscountPolicy.NONE);
 
         product.update("상품 수정", 2000, DiscountPolicy.NONE);
 
